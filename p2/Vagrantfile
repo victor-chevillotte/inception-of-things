@@ -1,0 +1,39 @@
+#  Commands :
+#  vagrant up
+#
+#  vagrant ssh vchevillS
+#  sudo k3s kubectl get nodes -o wide
+#  sudo k3s kubectl get all
+#  sudo k3s kubectl get ingress
+#  sudo k3s kubectl describe ingress -A
+#
+#  curl 192.168.56.110
+#  curl -H "Host: app1.com" 192.168.56.110
+#  curl -H "Host: app3.com" 192.168.56.110
+#
+#  vagrant destroy -f
+#
+
+Vagrant.configure("2") do |config|
+
+	config.vm.define "vchevillS" do |vchevillS|
+	  vchevillS.vm.box = "debian/bullseye64"
+	  vchevillS.vm.hostname = "vchevillS"
+	  vchevillS.vm.network "private_network", ip: "192.168.56.110", bridge: "eth1"
+	  vchevillS.vm.synced_folder "./confs/", "/confs"
+	  vchevillS.vm.provider "virtualbox" do |vb|
+		vb.name = "vchevillS"
+		vb.cpus = 4
+		vb.memory = 2048
+	  end
+	  vchevillS.vm.provision :shell, inline: <<-SHELL
+		sudo apt update && sudo apt install curl -qqy
+		curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--node-external-ip=192.168.56.110" K3S_TOKEN=vchevillsecret sh -s -
+		k3s kubectl apply -f /confs/app-one.yaml
+		k3s kubectl apply -f /confs/app-two.yaml
+		k3s kubectl apply -f /confs/app-three.yaml
+		k3s kubectl apply -f /confs/ingress.yaml
+	  SHELL
+	end
+  
+  end
