@@ -3,7 +3,9 @@
 #
 #  vagrant ssh vchevillS
 #  sudo k3s kubectl get nodes -o wide
+#  
 #  ifconfig eth1
+#  ip addr show eth1
 #  
 #  vagrant destroy -f
 #
