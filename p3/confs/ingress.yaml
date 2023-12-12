@@ -1,25 +1,16 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: argo-app-ingress
-  namespace: argocd  # Use the namespace where Argo CD is deployed
+  name: argocd-ingress
+  labels:
+    app: argocd
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
   - http:
       paths:
-      - path: /app(/|$)(.*)
-        pathType: Prefix
+      - path: /
         backend:
-          service:
-            name: vchevill-playground  # Name of your application service
-            port:
-              number: 8888
-      - path: /argocd(/|$)(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: argocd-server  # Name of Argo CD service
-            port:
-              number: 8090
+          serviceName: argocd-server
+          servicePort: 80
