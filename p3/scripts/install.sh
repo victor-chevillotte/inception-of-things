@@ -14,9 +14,7 @@ sudo kubectl create namespace dev
 sudo kubectl apply -f ../confs/project.yaml -n argocd
 sudo kubectl apply -f ../confs/application.yaml -n dev
 
-echo "==============="
 sudo kubectl wait --for=condition=Ready --timeout=300s -n dev --all pod
-echo "Port forward"
 sudo kubectl port-forward service/vchevill-playground -n dev 8888:8888 --address 0.0.0.0
 
 # Get Argo CD password
