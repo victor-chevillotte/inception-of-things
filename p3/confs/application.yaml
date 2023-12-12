@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd-iot-app
+  name: will-playground
 spec:
   project: development
   source:

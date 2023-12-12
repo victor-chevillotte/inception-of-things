@@ -1,9 +1,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: development
+  name: vchevill-app
   labels:
-    app: argocd-iot
+    app: vchevill-app
 spec:
   description: Our ArgoCD Project to deploy our app locally
   # Allow manifests to deploy only from victor-chevillotte git repositories
