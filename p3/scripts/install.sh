@@ -12,6 +12,7 @@ sudo kubectl wait --for=condition=Ready --timeout=300s -n argocd --all pod
 # Create Argo project
 sudo kubectl create namespace dev
 sudo kubectl apply -f ../confs/project.yaml -n argocd
+sudo kubectl apply -f ../confs/ingress.yaml -n argocd
 sudo kubectl apply -f ../confs/application.yaml -n dev
 
 sudo kubectl wait --for=condition=Ready --timeout=300s -n dev --all pod
@@ -25,7 +26,7 @@ echo
 echo
 
 # Access Argo CD
-sudo kubectl port-forward service/argocd-server -n argocd 8090:443 --address 0.0.0.0 & #& to run in background
+#sudo kubectl port-forward service/argocd-server -n argocd 8090:443 --address 0.0.0.0 & #& to run in background
 
 # Access Argo CD UI
 echo "Argo CD UI :"
