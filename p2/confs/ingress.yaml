@@ -1,37 +1,53 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: custom-ingress
-  annotations:
-    kubernetes.io/ingress.class: "traefik"
+  name: app1-ingress
 spec:
   rules:
-  - host: "app1.com"
+  - host: app1.com
     http:
       paths:
-      - path: "/"
+      - path: /
         pathType: Prefix
         backend:
           service:
-            name: app-one
+            name: app1
             port:
               number: 80
-  - host: "app2.com"
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app2-ingress
+spec:
+  rules:
+  - host: app2.com
     http:
       paths:
-      - path: "/"
+      - path: /
         pathType: Prefix
         backend:
           service:
-            name: app-two
+            name: app2
             port:
               number: 80
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app3-ingress
+spec:
+  rules:
   - http:
       paths:
-      - path: "/"
+      - path: /
         pathType: Prefix
         backend:
           service:
-            name: app-three
+            name: app3
             port:
               number: 80
