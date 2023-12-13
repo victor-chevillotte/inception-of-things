@@ -39,3 +39,4 @@ echo "http://localhost:8080"
 echo "username :admin"
 echo "password :"
 sudo kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" 2> /dev/null | base64 -d
+echo
