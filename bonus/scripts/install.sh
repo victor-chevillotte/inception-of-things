@@ -18,7 +18,7 @@ sudo helm upgrade --install gitlab gitlab/gitlab \
   --set global.edition=ce \
   --timeout 600s
 
-
+echo "Waiting for pods to be ready"
 sudo kubectl wait --for=condition=available deployments --all -n gitlab --timeout=1200s
 
 echo "Credentials :"
