@@ -5,7 +5,8 @@ metadata:
 spec:
   project: development
   source:
-    repoURL: https://github.com/victor-chevillotte/iot-app.git
+    repoURL: http://localhost:8085/root/test.git 
+    # https://github.com/victor-chevillotte/iot-app.git for p3
     targetRevision: HEAD
     path: manifests
     directory:
