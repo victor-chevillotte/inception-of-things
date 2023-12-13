@@ -1,8 +1,6 @@
 echo "Creating cluster"
 sudo k3d cluster create iot-cluster -p 8080:80@loadbalancer  -p 8888:8888@loadbalancer --agents 2
-
 echo "Cluster created, waiting..."
-
 sleep 5
 
 echo "Creating namespaces"
@@ -30,7 +28,9 @@ echo "Installed project to argocd"
 echo "Installing application to argocd"
 sudo kubectl apply -f ../confs/application.yaml -n argocd
 echo "application installed  to argocd"
-echo "\n\n\n"
+echo 
+echo
+echo
 echo "Everything is installed!"
 
 echo "Argo CD access :"
