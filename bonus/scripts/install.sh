@@ -15,7 +15,7 @@ sudo helm search repo gitlab
 echo "[INFO]   Installing Gitlab, this may take a while..."
 sudo helm install gitlab gitlab/gitlab   --set global.hosts.https="false" --set global.ingress.configureCertmanager="false" --set gitlab-runner.install="false" -n gitlab
 
-echo 'Gitlab installed ! Waiting for gitlab to be deployed'
+echo "Gitlab installed ! Waiting for gitlab to be deployed"
 sudo kubectl wait -n gitlab --for=condition=available deployment --all --timeout=-1s
 
 
