@@ -13,7 +13,7 @@ sudo helm repo add gitlab https://charts.gitlab.io/
 sudo helm search repo gitlab
 
 echo "[INFO]   Installing Gitlab, this may take a while..."
-sudo helm install gitlab gitlab/gitlab  --set global.hosts.domain=localhost:8085 --set global.hosts.https="false" --set global.ingress.configureCertmanager="false" --set gitlab-runner.install="false" -n gitlab
+sudo helm install gitlab gitlab/gitlab   --set global.hosts.https="false" --set global.ingress.configureCertmanager="false" --set gitlab-runner.install="false" -n gitlab
 
 echo "[INFO]   Gitlab URL: http://localhost:8085"
 echo "[INFO]   Gitlab username: root"
