@@ -26,4 +26,4 @@ echo "root"
 sudo kubectl get secret gitlab-gitlab-initial-root-password -n gitlab -ojsonpath='{.data.password}' | base64 --decode ; echo
 
 echo "Gitlab is deployed !"
-sudo kubectl port-forward service/gitlab-webservice-default 8181:8181 -n gitlab &
+sudo kubectl port-forward service/gitlab-webservice-default 8181:8181 -n gitlab --address 0.0.0.0 &
