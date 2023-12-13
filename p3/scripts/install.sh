@@ -1,5 +1,6 @@
 echo "Creating cluster"
-sudo k3d cluster create iot-cluster -p 8080:80@loadbalancer  -p 8888:8888@loadbalancer --agents 2
+sudo k3d cluster create iot-cluster -p 8080:80@loadbalancer  -p 8888:8888@loadbalancer -p 8085:8181@loadbalancer  --agents 2
+# last redirect is for bonus
 echo "Cluster created, waiting..."
 sleep 5
 
