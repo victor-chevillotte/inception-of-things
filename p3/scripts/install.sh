@@ -31,7 +31,6 @@ sudo kubectl apply -f ../confs/application.yaml -n argocd
 echo "application installed  to argocd"
 echo 
 echo
-echo
 echo "Everything is installed!"
 
 echo "Argo CD access :"
