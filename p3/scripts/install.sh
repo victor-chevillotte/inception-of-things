@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Create cluster
-sudo k3d cluster create iot-cluster -p 8080:80@loadbalancer -p 8443:443@loadbalancer
+sudo k3d cluster create iot-cluster -p 8090:80@loadbalancer -p 8443:443@loadbalancer
 sleep 5
 
 # Install Argo CD
@@ -10,6 +10,9 @@ sudo kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-
 sudo kubectl wait --for=condition=Ready --timeout=300s -n argocd --all pod
 
 echo "installing ingress"
+export KUBECONFIG="$(sudo k3d kubeconfig write iot-cluster)"
+sudo kubectl create deployment nginx --image=nginx -n argocd
+sudo kubectl create service clusterip nginx --tcp=80:80 -n argocd
 sudo kubectl apply -f ../confs/ingress.yaml -n argocd
 echo "installed ingress, waiting..."
 sleep 3
