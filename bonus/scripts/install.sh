@@ -22,6 +22,7 @@ echo "Waiting for pods to be ready"
 sudo kubectl wait --for=condition=available deployments --all -n gitlab --timeout=1200s
 
 echo "Credentials :"
+echo "localhost:8181"
 echo "root"
 sudo kubectl get secret gitlab-gitlab-initial-root-password -n gitlab -ojsonpath='{.data.password}' | base64 --decode ; echo
 
