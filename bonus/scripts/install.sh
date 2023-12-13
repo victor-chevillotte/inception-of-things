@@ -9,7 +9,7 @@ sudo helm repo add gitlab https://charts.gitlab.io/
 sudo helm repo update
 
 echo "Installing Gitlab, this may take a while..."
-echo "to follow the deployment : sudo kubectl get all -n gitlab or helm status gitlab -n gitlab"
+echo "to follow the deployment : sudo kubectl get all -n gitlab or sudo helm status gitlab -n gitlab"
 sudo helm upgrade --install gitlab gitlab/gitlab \
   -n gitlab \
   -f https://gitlab.com/gitlab-org/charts/gitlab/raw/master/examples/values-minikube-minimum.yaml \
