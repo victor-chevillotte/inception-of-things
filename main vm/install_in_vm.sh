@@ -4,7 +4,7 @@ sudo apt upgrade -y
 
 sudo apt install curl -y
 sudo apt install vim -y
-sudo apt install gh -y //Github CLI
+sudo apt install gh -y #Github CLI
 
 sudo apt install virtualbox -y
 sudo virtualbox --version
