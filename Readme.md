@@ -10,3 +10,12 @@ mdp : iot
 
 graphical install
 set all user and password to iot
+
+
+su - 
+usermod -aG sudo iot
+
+download project from github web (downloads zip)
+```
+bash main vm/install_in_vm.sh
+```
