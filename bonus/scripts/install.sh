@@ -19,11 +19,11 @@ echo "Gitlab installed ! Waiting for gitlab to be deployed"
 sudo kubectl wait -n gitlab --for=condition=available deployment --all --timeout=-1s
 
 
-echo "[INFO]   Gitlab URL: http://localhost:8085"
+echo "[INFO]   Gitlab URL: http://localhost:8181"
 echo "[INFO]   Gitlab username: root"
 echo "[INFO]   Gitlab password: "
 
 sudo kubectl get secret -n gitlab gitlab-gitlab-initial-root-password -o jsonpath='{.data.password}' | base64 -d; echo
 
 
-#sudo kubectl port-forward --address 0.0.0.0 service/gitlab-webservice-default -n gitlab 8085:8181 
+#sudo kubectl port-forward --address 0.0.0.0 service/gitlab-webservice-default -n gitlab 8181:8181 

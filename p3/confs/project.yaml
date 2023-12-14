@@ -9,7 +9,7 @@ spec:
   # Allow manifests to deploy only from victor-chevillotte git repositories
   sourceRepos:
     - '*'
-    #- "http://localhost:8085/*"
+    #- "http://localhost:8181/*"
     # https://github.com/victor-chevillotte/* for p3
   # Only permit to deploy applications in the same cluster
   destinations:
