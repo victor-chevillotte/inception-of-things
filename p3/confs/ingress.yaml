@@ -18,7 +18,7 @@ spec:
             port:
               number: 80
     #for bonus part
-      - path: /gitlab
+      - path: /
         pathType: Prefix
         backend:
           service:
