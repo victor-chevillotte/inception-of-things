@@ -39,3 +39,4 @@ echo "username : admin"
 echo -n "password : "
 sudo kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" 2> /dev/null | base64 -d
 echo
+echo "App address : http://localhost:8888"
