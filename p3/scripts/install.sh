@@ -34,7 +34,7 @@ echo
 echo "Everything is installed!"
 
 echo "Argo CD access :"
-echo "http://localhost:8080"
+echo "http://localhost:8080/argocd"
 echo "username :admin"
 echo "password :"
 sudo kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" 2> /dev/null | base64 -d

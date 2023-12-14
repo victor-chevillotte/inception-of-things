@@ -10238,6 +10238,10 @@ spec:
       - command:
         - argocd-server
         - --insecure #custom here for ssl problems
+        - --rootpath #custom here for /argocd ingress path
+        - /argocd
+        - --basehref
+        - /argocd
         env:
         - name: ARGOCD_SERVER_INSECURE
           valueFrom:
