@@ -17,3 +17,11 @@ spec:
             name: argocd-server
             port:
               number: 80
+    #for bonus part
+      - path: /gitlab
+        pathType: Prefix
+        backend:
+          service:
+            name: gitlab-webservice-default
+            port:
+              number: 8181
