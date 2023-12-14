@@ -26,4 +26,4 @@ echo "[INFO]   Gitlab password: "
 sudo kubectl get secret -n gitlab gitlab-gitlab-initial-root-password -o jsonpath='{.data.password}' | base64 -d; echo
 
 
-sudo kubectl port-forward --address 0.0.0.0 service/gitlab-webservice-default -n gitlab 8181:8181 
+sudo kubectl port-forward --address 0.0.0.0 service/gitlab-webservice-default -n gitlab 8181:8181 &
