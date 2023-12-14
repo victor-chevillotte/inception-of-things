@@ -1,4 +1,17 @@
-### Virtual machine
+## Inception Of Things
+
+__42 School Project__  
+
+### Goals
+
+- Deploy k3s Clusters using Vagrant
+- Deploy Applications in k3s
+- Deploy a kubernetes cluster with k3d
+- Run GitOps workflows with ArgoCD
+- Deploy Gitlab with Helm on kubernetes
+
+### Master Virtual machine Specs
+
 Virtual machine must have this config :
 OS : ubuntu-22.04.3-desktop-amd64
 https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-desktop-amd64.isousername 

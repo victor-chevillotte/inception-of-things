@@ -22,10 +22,11 @@ Vagrant.configure("2") do |config|
 		vb.memory = 1024
 	  end
 	  vchevillS.vm.provision :shell, inline: <<-SHELL
-	  	export PATH=$PATH:/sbin
+	  	echo "export PATH=$PATH:/sbin" >> ~/.profile
 		sudo apt update && sudo apt install curl -qqy && sudo apt install net-tools -qqy
 		curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--node-external-ip=192.168.56.110" K3S_TOKEN=vchevillsecret sh -s -
 		export KUBECONFIG=~/.kube/config
+		echo "export KUBECONFIG=~/.kube/config" >> ~/.profile
 		mkdir ~/.kube 2> /dev/null
 		sudo k3s kubectl config view --raw > "$KUBECONFIG"
 		chmod 600 "$KUBECONFIG"
