@@ -27,4 +27,8 @@ download project from github web (downloads zip)
 ```
 bash main vm/install_in_vm.sh
 ```
-todo var env
+
+### TO DO
+
+- [ ] Secrets variables in p2
+- [ ] Tests ifconfig
