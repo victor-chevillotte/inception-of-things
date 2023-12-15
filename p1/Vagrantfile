@@ -33,6 +33,7 @@ Vagrant.configure("2") do |config|
 		sudo apt update && sudo apt install curl -qqy && sudo apt install net-tools -qqy
 		curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--node-external-ip=192.168.56.110" K3S_TOKEN=#{ENV['K3S_TOKEN']} sh -s -
 		mkdir ~/.kube 2> /dev/null
+		export KUBECONFIG=~/.kube/config
 		sudo k3s kubectl config view --raw > "$KUBECONFIG"
 		chmod 600 "$KUBECONFIG"
 		echo "export KUBECONFIG=~/.kube/config" >> /home/vagrant/.bashrc
