@@ -61,6 +61,17 @@ curl -H "Host: app3.com" 192.168.56.110
 ---
 ### P3
 
+- Start 
+```
+cd scripts
+bash install.sh
+```
+- Stop
+```
+cd scripts
+bash stop.sh
+```
+
 - Deploys a k3d cluster 
 - Deploys ArgoCD 
 - Deploys an app with ArgoCD : We used our repository https://github.com/victor-chevillotte/iot-app.git
