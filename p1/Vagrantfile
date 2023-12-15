@@ -11,8 +11,12 @@
 #
 
 # Load .env file if it exists
-require 'dotenv'
-Dotenv.load if File.exists?('.env')
+if File.exists?('.env')
+	File.foreach('.env') do |line|
+	  key, value = line.split('=')
+	  ENV[key] = value.strip if key && value
+	end
+  end
 
 Vagrant.configure("2") do |config|
 
