@@ -19,8 +19,8 @@ Virtual machine must have this config :
 OS : ubuntu-22.04.3-desktop-amd64
 https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-desktop-amd64.isousername 
 
-- 30 go de stockage
-- 7.5 go de ram
+- 30 Go de stockage
+- 10 Go de ram
 - 12 vCPU
 - VT-x Enabled (Virtualbox>settings>system>processor)
 

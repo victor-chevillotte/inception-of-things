@@ -37,14 +37,15 @@ Vagrant.configure("2") do |config|
 	  vchevillS.vm.provision :shell, inline: <<-SHELL
 		sudo apt update && sudo apt install curl -qqy && sudo apt install net-tools -qqy
 		curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--node-external-ip=192.168.56.110" K3S_TOKEN=#{ENV['K3S_TOKEN']} sh -s -
-		mkdir ~/.kube 2> /dev/null
-		export KUBECONFIG=~/.kube/config
+		mkdir /home/vagrant/.kube 2> /dev/null
+		export KUBECONFIG=/home/vagrant/.kube/config
 		sudo k3s kubectl config view --raw > "$KUBECONFIG"
 		chmod 600 "$KUBECONFIG"
-		echo "export KUBECONFIG=~/.kube/config" >> /home/vagrant/.bashrc
+		echo "export KUBECONFIG=/home/vagrant/.kube/config" >> /home/vagrant/.bashrc
 		echo "updating PATH..."
 		echo "export PATH=$PATH:/sbin" >> /home/vagrant/.bashrc
 		source /home/vagrant/.bashrc
+		sudo chown -R vagrant /home/vagrant/.kube
 	  SHELL
 	end
   
