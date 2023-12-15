@@ -7,6 +7,11 @@
 #  ifconfig eth1
 #  ip addr show eth1
 #  
+#  Test deployment :
+#  sudo kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1
+#  sudo kubectl get pods -A
+#  sudo kubectl describe pod <POD_NAME>
+#
 #  vagrant destroy -f
 #
 
