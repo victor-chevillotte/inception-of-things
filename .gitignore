@@ -3,3 +3,5 @@ p2/.vagrant
 p3/.vagrant
 p1/.env
 p2/.env
+p3/scripts/argocd-linux-amd64
+p3/scripts/password
