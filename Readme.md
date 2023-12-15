@@ -10,6 +10,9 @@ __42 School Project__
 - Run GitOps workflows with ArgoCD
 - Deploy Gitlab with Helm on kubernetes
 
+**The project must be ran in a virtual machine, therefore an installation script is provided**  
+
+
 ### Master Virtual machine Specs
 
 Virtual machine must have this config :
@@ -28,7 +31,43 @@ download project from github web (downloads zip)
 bash main vm/install_in_vm.sh
 ```
 
-### TO DO
+---
+### P1
 
-- [ ] Secrets variables in p2
-- [ ] Tests ifconfig
+- Deploy a k3s cluster with a Server Node and a Worker Node using Vagrant 
+- Test deployment
+```
+sudo kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1
+sudo kubectl get pods -A
+sudo kubectl describe pod <POD_NAME>
+```
+
+---
+### P2
+
+- Deploy a k3s cluster with only a Server Node
+- Run 3 apps as follows :
+    - app1 : 1 Replica
+    - app2 : 3 Replica
+    - app3 : 1 Replica
+- An ingress is deployed
+- Test deployment with :
+```
+curl 192.168.56.110
+curl -H "Host: app1.com" 192.168.56.110
+curl -H "Host: app3.com" 192.168.56.110
+```
+
+---
+### P3
+
+- Deploys a k3d cluster 
+- Deploys ArgoCD 
+- Deploys an app with ArgoCD : We used our repository https://github.com/victor-chevillotte/iot-app.git
+
+
+---
+### Bonus
+
+- Deploys Gitlab on k3d
+- Deploys a repo hosted on local Gitlab with ArgoCD
