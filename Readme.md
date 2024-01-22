@@ -85,4 +85,4 @@ bash stop.sh
 
 to get gitlab dns inside kubernetes cluster (such as ArgoCD) :
 ```http://<service name>.<namespace>.svc.cluster.local```
-```https://gitlab-webservice-default.gitlab.svc.cluster.local:8181/root/test.git```
+```http://gitlab-webservice-default.gitlab.svc.cluster.local:8181/root/test.git```
