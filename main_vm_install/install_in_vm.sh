@@ -4,7 +4,7 @@ sudo apt upgrade -y
 
 sudo apt install curl -y
 sudo apt install vim -y
-sudo apt install gh -y # Github CLI
+sudo apt install git -y
 
 sudo apt install virtualbox -y
 sudo virtualbox --version
@@ -23,8 +23,3 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 rm kubectl
 
 curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
-
-sudo curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
-sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
-rm argocd-linux-amd64
-argocd version
