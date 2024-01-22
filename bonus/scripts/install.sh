@@ -21,7 +21,7 @@ sudo kubectl wait -n gitlab --for=condition=available deployment --all --timeout
 echo "Installing ingress"
 sudo kubectl apply -f ../confs/ingress.yaml -n gitlab
 
-echo "[INFO]   Gitlab URL: http://localhost:8181"
+echo "[INFO]   Gitlab URL: http://localhost:8080"
 echo "[INFO]   Gitlab username: root"
 echo "[INFO]   Gitlab password: "
 
