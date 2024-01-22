@@ -6,7 +6,7 @@ metadata:
     app: gitlab
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
- spec:
+spec:
    rules:
    - http:
        paths:
