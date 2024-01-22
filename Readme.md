@@ -10,7 +10,7 @@ __42 School Project__
 - Run GitOps workflows with ArgoCD
 - Deploy Gitlab with Helm on kubernetes
 
-**The project must be ran in a virtual machine, therefore an installation script is provided**  
+**The project must be launched in a virtual machine, therefore an installation script is provided**  
 
 
 ### Master Virtual machine Specs
@@ -19,8 +19,8 @@ Virtual machine must have this config :
 OS : ubuntu-22.04.3-desktop-amd64
 https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-desktop-amd64.isousername 
 
-- 30 Go de stockage
-- 12 Go de ram
+- 50 Go storage
+- 12 Go ram
 - 8 vCPU
 - VT-x Enabled (Virtualbox>settings>system>processor)
 
@@ -80,7 +80,7 @@ bash stop.sh
 ---
 ### Bonus
 
-- Deploys Gitlab on k3d
+- Deploys Gitlab on k3d using helm
 - Deploys a repo hosted on local Gitlab with ArgoCD
 
 to get gitlab dns inside kubernetes cluster (such as ArgoCD) :
