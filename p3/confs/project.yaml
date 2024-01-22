@@ -6,7 +6,6 @@ metadata:
     app: vchevill-app
 spec:
   description: Our ArgoCD Project to deploy our app locally
-  # Allow manifests to deploy only from victor-chevillotte git repositories
   sourceRepos:
     - '*'
   # Only permit to deploy applications in the same cluster
