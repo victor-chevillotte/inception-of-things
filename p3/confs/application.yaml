@@ -5,7 +5,7 @@ metadata:
 spec:
   project: development
   source:
-    repoURL: https://github.com/victor-chevillotte/iot-app.git
+    repoURL: https://github.com/victor-chevillotte/vchevill_iot.git
     targetRevision: HEAD
     path: manifests
     directory:
